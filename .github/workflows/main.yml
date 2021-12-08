@@ -20,5 +20,22 @@ jobs:
     - name: Restore NuGet Packages
       run: nuget restore Foobar.sln
  
-    - name: Build and Publish Web App
+    - name: Build Lib
       run: msbuild Foobar.sln /p:Configuration=Release
+   
+    - name: publish on version change
+      id: publish_nuget
+      uses: rohith/publish-nuget@v2
+      with:
+       PROJECT_FILE_PATH: Foobar/Foobar.csproj
+       
+       PACKAGE_NAME: FoobarYoba
+       NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+       NUGET_SOURCE: https://nuget.pkg.github.com/Barsik/index.json
+
+
+
+      
+  
+    
+   
