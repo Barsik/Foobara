@@ -31,7 +31,6 @@ jobs:
        VERSION_STATIC: 1.0.0
        PACKAGE_NAME: FoobarYoba
        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-       NUGET_SOURCE: https://nuget.pkg.github.com/Barsik/index.json
 
 
 
