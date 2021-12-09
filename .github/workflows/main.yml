@@ -11,7 +11,7 @@ jobs:
  
     steps:
     - id: qwe
-    - name: Set VERSION variable from tag
+      name: Set VERSION variable from tag
     - run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}"
     - run: echo ${{ steps.qwe.VERSION }}
     - run: echo ${{ qwe.VERSION }}
