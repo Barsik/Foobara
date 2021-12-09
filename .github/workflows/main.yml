@@ -13,15 +13,9 @@ jobs:
      
     - name: Setup MSBuild Path
       uses: microsoft/setup-msbuild@v1.1
-       
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.5
-     
-    - name: Restore NuGet Packages
-      run: nuget restore Foobar.sln
  
     - name: Build Lib
-      run: msbuild Foobar/Foobar.csproj -t:Restore /p:Configuration=Release /p:Version=1.0.0 
+      run: msbuild Foobar/Foobar.csproj -t:Restore /p:Configuration=Release /p:PackageVersion=2.0.0
    
 
 
