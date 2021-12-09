@@ -16,6 +16,9 @@ jobs:
  
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
+      
+    - name: Restore NuGet Packages
+      run: nuget restore Foobar.sln
  
     - name: Build Lib & pack
       run: msbuild Foobar/Foobar.csproj -t:Restore /p:Configuration=Release -t:pack /p:PackageVersion=2.0.0
