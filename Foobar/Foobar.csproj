@@ -7,12 +7,11 @@
         <ProjectGuid>{606DED63-BA56-4680-839E-0221276BAF15}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-<!--        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
         <RootNamespace>Foobar</RootNamespace>
         <AssemblyName>Foobar</AssemblyName>
         <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
-        <Authors>Barsik</Authors>
+        <Authors>nomerci</Authors>
         <PackageVersion>1.0.0</PackageVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
