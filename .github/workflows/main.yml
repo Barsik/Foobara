@@ -14,7 +14,7 @@ jobs:
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}"
       
     - name: Echo
-      run: echo ${{ VERSION }}
+      run: echo $VERSION
     
     - uses: actions/checkout@v1
       name: Checkout Code
