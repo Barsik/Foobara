@@ -18,13 +18,13 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5
       
     - name: Restore NuGet Packages
-      run: nuget restore Foobar/Foobar.csproj
+      run: nuget restore Foobar.sln
  
     - name: Build Lib & pack
       run: msbuild Foobar/Foobar.csproj -t:Restore /p:Configuration=Release -t:pack /p:PackageVersion=2.0.0
       
     - name: nuget push
-      run: nuget push Foobar/Release/Foobar.2.0.0.nupkg ${{secrets.NUGET_API_KEY}} -Source https://api.nuget.org/v3/index.json
+      run: nuget push Foobar/bin/Release/Foobar.2.0.0.nupkg ${{secrets.NUGET_API_KEY}} -Source https://api.nuget.org/v3/index.json
    
 
 
