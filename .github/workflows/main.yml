@@ -1,7 +1,9 @@
 name: Build
  
-on: [push]
- 
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
 jobs:
   build:
  
@@ -10,6 +12,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       name: Checkout Code
+      
+    - name: Set VERSION variable from tag
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}"
+    
+    - name: echo
+      run: echo "${VERSION}"
      
     - name: Setup MSBuild Path
       uses: microsoft/setup-msbuild@v1.1
