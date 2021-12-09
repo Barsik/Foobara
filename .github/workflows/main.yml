@@ -21,16 +21,8 @@ jobs:
       run: nuget restore Foobar.sln
  
     - name: Build Lib
-      run: msbuild Foobar.sln /p:Configuration=Release /p:Version=1.0.0 
+      run: msbuild Foobar.sln -t:Restore /p:Configuration=Release /p:Version=1.0.0 
    
-    - name: publish on version change
-      id: publish_nuget
-      uses: rohith/publish-nuget@v2
-      with:
-       PROJECT_FILE_PATH: Foobar/Foobar.csproj
-       VERSION_STATIC: 1.0.0
-       PACKAGE_NAME: FoobarYoba
-       NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
 
 
