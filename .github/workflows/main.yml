@@ -17,11 +17,8 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
  
-    - name: Build Lib
-      run: msbuild Foobar/Foobar.csproj -t:Restore /p:Configuration=Release /p:PackageVersion=2.0.0
-      
-    - name: Pack
-      run: msbuild -t:pack /p:PackageVersion=2.0.0
+    - name: Build Lib & pack
+      run: msbuild Foobar/Foobar.csproj -t:Restore /p:Configuration=Release -t:pack /p:PackageVersion=2.0.0
       
     - name: nuget push
       run: nuget push Foobar/Release/Foobar.2.0.0.nupkg ${{secrets.NUGET_API_KEY}} -Source https://api.nuget.org/v3/index.json
