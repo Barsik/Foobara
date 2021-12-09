@@ -21,7 +21,7 @@ jobs:
       run: nuget restore Foobar.sln
  
     - name: Build Lib
-      run: msbuild Foobar.sln -t:Restore /p:Configuration=Release /p:Version=1.0.0 
+      run: msbuild Foobar/Foobar.csproj -t:Restore /p:Configuration=Release /p:Version=1.0.0 
    
 
 
