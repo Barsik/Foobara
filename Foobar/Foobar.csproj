@@ -38,7 +38,7 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-
+        <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.0.0"/>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Class1.cs" />
