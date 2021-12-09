@@ -16,7 +16,12 @@ jobs:
         run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
         
       - name: xxx
-        run: echo "${VERSION}"
+        run: echo "xxx ${VERSION}"
+        
+      - name: Get the tag name
+        run: echo "TAG=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
+      - name: Build and push
+        run: echo "tag ${{ env.TAG }}"
 
 
 
