@@ -24,7 +24,7 @@ jobs:
       run: msbuild Foobar/Foobar.csproj -t:Restore /p:Configuration=Release -t:pack /p:PackageVersion=2.0.0
       
     - name: Print  
-      run: echo "${{secrets.NUGET_API_KEY}"
+      run: echo "Qwe ${{secrets.NUGET_API_KEY}}"
             
     - name: nuget push
       run: nuget push Foobar/bin/Release/Foobar.2.0.0.nupkg ${{secrets.NUGET_API_KEY}} -Source https://api.nuget.org/v3/index.json
