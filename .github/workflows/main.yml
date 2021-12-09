@@ -10,11 +10,12 @@ jobs:
     runs-on: windows-latest
  
     steps:
-    - id: get_version
-      uses: battila7/get-version-action@v2
-
-    - run: echo ${{ steps.get_version.outputs.version }}
-    - run: echo ${{ steps.get_version.outputs.version-without-v }}
+    - id: qwe
+    - name: Set VERSION variable from tag
+    - run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}"
+    - run: echo ${{ steps.qwe.VERSION }}
+    - run: echo ${{ qwe.VERSION }}
+    - run: echo ${{ VERSION }}
     
     - uses: actions/checkout@v1
       name: Checkout Code
