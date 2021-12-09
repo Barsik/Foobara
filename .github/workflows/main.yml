@@ -10,14 +10,14 @@ jobs:
     runs-on: windows-latest
  
     steps:
+    - id: get_version
+      uses: battila7/get-version-action@v2
+
+    - run: echo ${{ steps.get_version.outputs.version }}
+    - run: echo ${{ steps.get_version.outputs.version-without-v }}
+    
     - uses: actions/checkout@v1
       name: Checkout Code
-      
-    - name: Set VERSION variable from tag
-      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}"
-    
-    - name: echo
-      run: echo "${VERSION}"
      
     - name: Setup MSBuild Path
       uses: microsoft/setup-msbuild@v1.1
